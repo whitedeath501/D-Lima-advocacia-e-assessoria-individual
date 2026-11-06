@@ -366,11 +366,25 @@
 
             }
 
-            nav{
-
-                display:none;
-
-            }
+            nav {
+        display: block;
+       
+        position: absolute;
+       
+        top: 90px;
+       
+        left: 0;
+       
+        width: 100%;
+       
+        background: #101218;
+       
+        max-height: 0;
+       
+        overflow: hidden;
+       
+        transition: .4s ease;
+}
 
         }
 /* ================================= */
@@ -906,9 +920,6 @@ button:focus-visible{
     color:var(--gray);
     font-size:.9rem;
 }
-/* ========================= */
-/* FAQ ACORDION */
-/* ========================= */
 
 .faq-item{
     margin-bottom:15px;
@@ -945,9 +956,6 @@ button:focus-visible{
     max-height:200px;
     padding:15px 20px 20px;
 }
-/* ========================= */
-/* FOOTER FINAL PREMIUM */
-/* ========================= */
 
 .footer-legal{
     border-top:1px solid rgba(255,255,255,.05);
@@ -967,14 +975,13 @@ button:focus-visible{
     color:#8f8f8f;
     line-height:1.6;
 }
-/* melhora performance de animações */
+
 * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 }
 
-/* evita layout shift em hover */
 .area-card,
 .case-card,
 .diferencial-card {
@@ -999,7 +1006,6 @@ body {
     letter-spacing: 0.2px;
 }
 
-/* hover premium mais suave */
 .area-card,
 .case-card,
 .diferencial-card {
@@ -1013,7 +1019,6 @@ body {
     box-shadow: 0 12px 30px rgba(0,0,0,.25);
 }
 
-/* botão premium feel */
 .btn-primary,
 .cta-btn,
 .btn-contato {
@@ -1040,7 +1045,6 @@ body {
     left: 100%;
 }
 
-/* foco acessível real */
 :focus-visible {
     outline: 2px solid var(--gold);
     outline-offset: 3px;
@@ -1069,4 +1073,234 @@ body {
     width: auto;
     object-fit: contain;
     display: block;
+}
+
+:root {
+    --gold: #c6a45c;
+    --gold-hover: #dfbd75;
+    --background: #0c0e12;
+    --surface: #151820;
+    --gray: #b7bac2;
+    --transition: .35s ease;
+}
+
+
+header {
+    background: rgba(12, 14, 18, .94);
+    border-bottom: 1px solid rgba(198, 164, 92, .15);
+}
+
+.header-content {
+    height: 90px;
+}
+
+.logo img {
+    height: 54px;
+    transition: var(--transition);
+}
+
+.logo img:hover {
+    transform: scale(1.04);
+}
+
+nav a {
+    position: relative;
+    font-weight: 500;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: var(--transition);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+.hero {
+    position: relative;
+    min-height: 850px;
+    padding: 130px 0 80px;
+    background:
+        radial-gradient(
+            ellipse at 80% 40%,
+            rgba(198,164,92,.10),
+            transparent 45%
+        ),
+        #0c0e12;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.6rem, 5vw, 4.3rem);
+    letter-spacing: -1.5px;
+}
+
+.hero-text p {
+    max-width: 580px;
+    line-height: 1.9;
+}
+
+.hero-badge {
+    border-color: rgba(198,164,92,.5);
+    background: rgba(198,164,92,.06);
+}
+
+.hero-card {
+    position: relative;
+    width: 440px;
+    height: 500px;
+    max-width: 100%;
+    overflow: hidden;
+    background: linear-gradient(
+        145deg,
+        #20232b,
+        #101218 75%
+    );
+    border: 1px solid rgba(198,164,92,.35);
+    border-radius: 4px;
+    box-shadow: 0 30px 80px rgba(0,0,0,.5);
+}
+
+.hero-card-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-monogram {
+    font-family: "Cinzel", serif;
+    font-size: 6rem;
+    color: var(--gold);
+    letter-spacing: 8px;
+}
+
+.hero-card-line {
+    width: 90px;
+    height: 1px;
+    background: var(--gold);
+    margin: 15px 0 25px;
+}
+
+.hero-card h2 {
+    font-family: "Cinzel", serif;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    color: white;
+}
+
+.hero-card-content p {
+    color: var(--gold);
+    font-size: .75rem;
+    letter-spacing: 3px;
+    margin-top: 10px;
+}
+
+.hero-card-caption {
+    position: absolute;
+    bottom: 35px;
+    color: #a6a6a6;
+    font-size: .65rem;
+    letter-spacing: 2px;
+}
+
+.hero-decoration {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(198,164,92,.12);
+    transform: rotate(45deg);
+    top: -150px;
+    right: -150px;
+}
+
+
+.btn-primary,
+.btn-contato,
+.cta-btn {
+    background: linear-gradient(
+        135deg,
+        #c6a45c,
+        #e0c17d
+    );
+    color: #111;
+    box-shadow: 0 8px 25px rgba(198,164,92,.12);
+}
+
+.btn-secondary {
+    border-width: 1px;
+}
+
+.area-card,
+.case-card,
+.diferencial-card,
+.info-card {
+    background: linear-gradient(
+        145deg,
+        #191d26,
+        #13161d
+    );
+    border: 1px solid rgba(198,164,92,.12);
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.area-card:hover,
+.case-card:hover,
+.diferencial-card:hover {
+    border-color: rgba(198,164,92,.5);
+    box-shadow: 0 18px 40px rgba(0,0,0,.25);
+}
+
+
+.section-title span {
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    letter-spacing: -.5px;
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 140px;
+        min-height: auto;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 340px;
+        height: 380px;
+    }
+
+    .hero-monogram {
+        font-size: 4.5rem;
+    }
+
+    .hero-trust {
+        gap: 20px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
 }
